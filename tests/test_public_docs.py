@@ -37,6 +37,16 @@ class PublicDocsTests(unittest.TestCase):
                 with self.subTest(document=document.name, target=target):
                     self.assertTrue((document.parent / target).is_file())
 
+    def test_readme_hero_uses_a_local_png_with_descriptive_alt_text(self):
+        readme = (ROOT / 'README.md').read_text()
+        images = re.findall(r'!\[([^\]]+)\]\((docs/images/[^)]+)\)', readme)
+        self.assertTrue(images, 'README must include a checked-in app screenshot.')
+        for alt, target in images:
+            with self.subTest(target=target):
+                self.assertGreater(len(alt.split()), 5)
+                self.assertEqual(Path(target).suffix, '.png')
+                self.assertTrue((ROOT / target).read_bytes().startswith(b'\x89PNG\r\n\x1a\n'))
+
     def test_public_sources_do_not_embed_machine_specific_locations(self):
         # Keep this pattern generic so the guard does not match its own source.
         local_path = re.compile(

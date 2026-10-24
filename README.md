@@ -4,6 +4,10 @@
 
 **Build Neovim editing habits without leaving RunJS.**
 
+![RunJS showing Mint Dark, relative line numbers, JavaScript results and the NORMAL mode HUD](docs/images/normal-mode.png)
+
+*RunJS 4.1.0 on macOS with Mint Dark, optional relative numbers and the live NORMAL HUD.*
+
 The main goal is to bring **most default Neovim editing shortcuts into RunJS**,
 while keeping its JavaScript/TypeScript execution, preview, and sandbox workflow.
 Practice transferable modal editing without another layer of editor configuration.
