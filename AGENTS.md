@@ -30,7 +30,7 @@
 
 ## Appearance
 
-- Keep visual profiles opt-in and portable; never read Kitty config at runtime.
+- Keep visual profiles opt-in and portable; never read personal terminal config at runtime.
 - Preserve opaque text and apply alpha to backgrounds, not the whole window.
 - Web View defaults must be lower priority than exercise-authored CSS/inline styles.
 - Do not alter runtime security, preload, Node access, or navigation guards for styling.

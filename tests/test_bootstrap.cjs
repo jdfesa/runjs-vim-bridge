@@ -6,9 +6,10 @@ const vm = require('node:vm');
 const path = require('node:path');
 const source = fs.readFileSync(path.resolve(__dirname, '../patches/runjs-4.1.0/runjs-bridge-main.cjs'), 'utf8');
 
-for (const appearance of ['native', 'kitty']) {
+for (const appearance of ['native', 'mint', 'kitty']) {
   for (const hostCommands of [false, true]) {
-    test(`bootstrap delegates original startup: ${appearance}, host=${hostCommands}`, () => {
+    const label = appearance === 'kitty' ? 'legacy profile' : appearance;
+    test(`bootstrap delegates original startup: ${label}, host=${hostCommands}`, () => {
       const calls = [];
       vm.runInNewContext(source, { __dirname: 'synthetic-app', require(name) {
         if (name === './package.json') return { runjsVimBridge: { appearance, hostCommands } };
@@ -16,7 +17,7 @@ for (const appearance of ['native', 'kitty']) {
         if (name === 'electron') return {};
         calls.push(name);
       } });
-      assert.deepEqual(calls, [...(appearance === 'kitty' ? ['./runjs-appearance-main.cjs'] : []),
+      assert.deepEqual(calls, [...(appearance !== 'native' ? ['./runjs-appearance-main.cjs'] : []),
         ...(hostCommands ? ['host'] : []), './entry-bundle.js', ...(hostCommands ? ['restore'] : [])]);
     });
   }

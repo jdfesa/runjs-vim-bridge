@@ -25,8 +25,8 @@ reaches it. [Keybindings](keybindings.md) separates those claims.
 - Per-tab editor discovery and listener cleanup; no exercise-text logging.
 - Optional relative line numbers: current line absolute, others buffer distance;
   native visibility stays user-controlled; previous formatter restored on cleanup.
-- Optional Kitty-inspired black/mint/amber profile with background-only alpha,
-  macOS vibrancy and opaque text. No runtime dependency on Kitty configuration.
+- Optional Mint Dark black/mint/amber profile with background-only alpha,
+  macOS vibrancy and opaque text. No runtime dependency on external theme configuration.
 - Low-priority dark Web View defaults with that profile; exercise styles win.
 - Version-specific additive construction, hash checks, full backups, local
   signing, verified restoration and explicit upgrades of recognized bridge assets.

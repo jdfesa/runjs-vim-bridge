@@ -1,4 +1,4 @@
-/* Kitty-inspired black/mint/amber profile. Text always remains fully opaque. */
+/* Mint Dark black/mint/amber profile. Text always remains fully opaque. */
 /* Layered !important rules outrank the bundled themes' unlayered !important rules. */
 @layer runjs-bridge-appearance {
 :root {

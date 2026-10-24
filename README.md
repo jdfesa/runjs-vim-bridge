@@ -38,7 +38,7 @@ into the app's Resources directory as loose files.
 - [Patch scope](docs/patch-scope.md): what we add, preserve, and do not implement.
 - [Command audit](docs/command-audit.md): reproducible evidence and known gaps.
 - [Roadmap](docs/roadmap.md): prioritized compatibility improvements.
-- [Appearance](docs/appearance.md): dark Web View and background translucency.
+- [Appearance](docs/appearance.md): Mint Dark, dark Web View and translucency.
 - [Relative numbers](docs/relative-lines.md): counted-motion practice aid.
 - [Development](docs/development.md): architecture, tests, validation limits.
 - [Project conventions](AGENTS.md): portability, English text, safe changes.

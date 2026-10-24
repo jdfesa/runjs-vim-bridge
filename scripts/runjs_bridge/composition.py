@@ -14,6 +14,12 @@ PINNED_BUNDLES = {
     'entry-bundle.js': '1eb4093f3dfbcc3b7efb567a839bac52057a031b87c7c198934c2190c1fc4fa5',
 }
 
+
+def normalize_appearance(value):
+    """Keep earlier build commands usable without advertising old profile names."""
+    return 'mint' if value == 'kitty' else value
+
+
 def remove_reference(html, reference):
     if html.count(reference) > 1:
         raise SystemExit('Duplicate bridge asset reference; refusing to build.')
@@ -46,7 +52,7 @@ def compose(original_entries, payload, args):
     if html.count('</head>') != 1 or html.count('</body>') != 1:
         raise SystemExit('Unexpected index.html structure; refusing to build the patch.')
     html = html.replace('</head>', '<link rel="stylesheet" href="./runjs-vim-mode.css"></head>')
-    if args.appearance == 'kitty':
+    if args.appearance == 'mint':
         html = html.replace('</head>', '<link rel="stylesheet" href="./runjs-appearance.css"></head>')
     html = html.replace('</body>', '<script src="./runjs-vim-mode.js"></script></body>')
     if args.relative_lines:
@@ -67,7 +73,7 @@ def compose(original_entries, payload, args):
         for source in sorted((ASSETS / 'bridge-host').glob('*.cjs')):
             additions['bridge-host/' + source.name] = source.read_bytes()
         additions['runjs-ex-commands.js'] = (ASSETS / 'runjs-ex-commands.js').read_bytes()
-    if args.host_commands or args.appearance == 'kitty' or 'runjs-bridge-main.cjs' in original_entries:
+    if args.host_commands or args.appearance == 'mint' or 'runjs-bridge-main.cjs' in original_entries:
         if not all(name in original_entries for name in ['package.json', 'preview.html']):
             raise SystemExit('Missing package.json or preview.html; refusing appearance patch.')
         package = json.loads(content(payload, original_entries['package.json']))
@@ -83,14 +89,14 @@ def compose(original_entries, payload, args):
         preview = remove_reference(preview, '<link rel="stylesheet" href="./runjs-preview-defaults.css">')
         if preview.count('</head>') != 1:
             raise SystemExit('Unexpected preview.html structure; refusing appearance patch.')
-        if args.host_commands or args.appearance == 'kitty':
+        if args.host_commands or args.appearance == 'mint':
             package['main'] = 'runjs-bridge-main.cjs'
             package['runjsVimBridge'] = {
                 'originalMain': 'entry-bundle.js', 'patchVersion': PATCH_VERSION, 'appearance': args.appearance,
                 'hostCommands': args.host_commands,
             }
             additions['runjs-bridge-main.cjs'] = (ASSETS / 'runjs-bridge-main.cjs').read_bytes()
-        if args.appearance == 'kitty':
+        if args.appearance == 'mint':
             preview = preview.replace('</head>', '<link rel="stylesheet" href="./runjs-preview-defaults.css"></head>')
             for name in ['runjs-appearance-main.cjs', 'runjs-appearance.css', 'runjs-preview-defaults.css']:
                 additions[name] = (ASSETS / name).read_bytes()

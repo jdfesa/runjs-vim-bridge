@@ -1,8 +1,8 @@
-# Kitty-Inspired Appearance
+# Mint Dark Appearance
 
-An optional built-in profile, selected at build time with `--appearance kitty`.
-No Kitty installation, runtime configuration import, or new settings framework
-is required. The default build keeps native RunJS appearance unchanged.
+An optional built-in profile, selected at build time with `--appearance mint`.
+Mint Dark is a self-contained black/mint/amber palette. No external theme,
+terminal configuration import, or new settings framework is required. The default build keeps native RunJS appearance unchanged.
 
 ## Palette and Translucency
 
@@ -12,11 +12,10 @@ is required. The default build keeps native RunJS appearance unchanged.
 - Background alpha: `0.85`. Text and the window's overall opacity remain `1`.
 - macOS uses native `under-window` vibrancy, not a whole-window fade.
 
-This is inspired by a terminal palette, not a pixel-identical Kitty renderer.
-Native blur/material appearance depends on macOS, accessibility settings,
-wallpaper, overlapping windows, and window composition. Numeric Kitty blur
-values do not map directly to Electron's vibrancy materials. Separate native
-preview windows can composite differently from the editor backdrop.
+The profile uses Electron background and vibrancy APIs. Native blur/material
+appearance depends on macOS, accessibility settings, wallpaper, overlapping
+windows and window composition. Separate native preview windows can composite
+differently from the editor backdrop.
 
 ## Web View Defaults
 

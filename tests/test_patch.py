@@ -159,15 +159,15 @@ class PatchTests(unittest.TestCase):
         source = (ROOT / 'patches/runjs-4.1.0/runjs-vim-mode.js').read_text()
         self.assertIn("version: '" + manifest['patch_version'] + "'", source)
 
-    def test_kitty_profile_preserves_original_bundles_and_runtime_security(self):
-        manifest = self.successful_build('--appearance', 'kitty')
+    def test_mint_profile_preserves_original_bundles_and_runtime_security(self):
+        manifest = self.successful_build('--appearance', 'mint')
         _, _, files = unpack((self.output / 'app.patched.asar').read_bytes())
         for name in ['entry-bundle.js', 'index-bundle.js']:
             self.assertEqual(files[name], self.files[name])
         package = json.loads(files['package.json'])
         self.assertEqual(package['main'], 'runjs-bridge-main.cjs')
         self.assertEqual(package['runjsVimBridge']['originalMain'], 'entry-bundle.js')
-        self.assertEqual(manifest['appearance'], 'kitty')
+        self.assertEqual(manifest['appearance'], 'mint')
         self.assertIn(b'./runjs-preview-defaults.css', files['preview.html'])
         self.assertIn(b'./runjs-appearance.css', files['index.html'])
         for name in ['runjs-bridge-main.cjs', 'runjs-appearance.css', 'runjs-preview-defaults.css']:
@@ -177,6 +177,30 @@ class PatchTests(unittest.TestCase):
         self.assertNotIn(b'nodeIntegration:', files['runjs-bridge-main.cjs'])
         self.assertNotIn(b'sandbox:', files['runjs-bridge-main.cjs'])
 
+    def test_legacy_appearance_option_normalizes_without_appearing_in_help(self):
+        manifest = self.successful_build('--appearance', 'kitty')
+        self.assertEqual(manifest['appearance'], 'mint')
+        _, _, files = unpack((self.output / 'app.patched.asar').read_bytes())
+        self.assertEqual(json.loads(files['package.json'])['runjsVimBridge']['appearance'], 'mint')
+        result = subprocess.run([sys.executable, str(ROOT / 'scripts/build-patch.py'), '--help'],
+                                capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0)
+        self.assertIn('Mint Dark', result.stdout)
+        self.assertNotIn('kitty', result.stdout)
+
+    def test_upgrade_recognizes_legacy_appearance_metadata(self):
+        self.successful_build('--appearance', 'mint')
+        _, _, files = unpack((self.output / 'app.patched.asar').read_bytes())
+        package = json.loads(files['package.json'])
+        package['runjsVimBridge']['appearance'] = 'kitty'
+        files['package.json'] = json.dumps(package).encode()
+        self.files = files
+        self.make_app()
+        manifest = self.successful_build('--upgrade', '--appearance', 'mint')
+        self.assertEqual(manifest['appearance'], 'mint')
+        _, _, upgraded = unpack((self.output / 'app.patched.asar').read_bytes())
+        self.assertEqual(json.loads(upgraded['package.json'])['runjsVimBridge']['appearance'], 'mint')
+
     def apply_build_to_fixture(self):
         shutil.copy2(self.output / 'app.patched.asar', self.app / 'Contents/Resources/app.asar')
         shutil.copy2(self.output / 'Info.patched.plist', self.app / 'Contents/Info.plist')
@@ -184,17 +208,17 @@ class PatchTests(unittest.TestCase):
     def test_upgrade_adds_profile_without_stacking_references(self):
         self.successful_build()
         self.apply_build_to_fixture()
-        manifest = self.successful_build('--upgrade', '--appearance', 'kitty')
+        manifest = self.successful_build('--upgrade', '--appearance', 'mint')
         self.assertEqual(manifest['upgrade_from'], manifest['patch_version'])
         self.apply_build_to_fixture()
-        self.successful_build('--upgrade', '--appearance', 'kitty')
+        self.successful_build('--upgrade', '--appearance', 'mint')
         _, _, files = unpack((self.output / 'app.patched.asar').read_bytes())
         for reference in [b'./runjs-vim-mode.js', b'./runjs-vim-mode.css', b'./runjs-appearance.css']:
             self.assertEqual(files['index.html'].count(reference), 1)
         self.assertEqual(files['preview.html'].count(b'./runjs-preview-defaults.css'), 1)
 
     def test_profile_can_be_removed_without_changing_original_entry(self):
-        self.successful_build('--appearance', 'kitty')
+        self.successful_build('--appearance', 'mint')
         self.apply_build_to_fixture()
         self.successful_build('--upgrade', '--appearance', 'native')
         _, _, files = unpack((self.output / 'app.patched.asar').read_bytes())
@@ -215,15 +239,15 @@ class PatchTests(unittest.TestCase):
         self.assertNotIn(b'runjs-relative-lines.js', files['index.html'])
         self.assertNotIn('runjs-relative-lines.js', files)
 
-    def test_relative_lines_can_upgrade_with_kitty_profile_without_stacking(self):
-        self.successful_build('--appearance', 'kitty')
+    def test_relative_lines_can_upgrade_with_mint_profile_without_stacking(self):
+        self.successful_build('--appearance', 'mint')
         self.apply_build_to_fixture()
         for _ in range(2):
-            manifest = self.successful_build('--upgrade', '--appearance', 'kitty', '--relative-lines')
+            manifest = self.successful_build('--upgrade', '--appearance', 'mint', '--relative-lines')
             self.apply_build_to_fixture()
         _, _, files = unpack((self.output / 'app.patched.asar').read_bytes())
         self.assertTrue(manifest['relative_line_numbers'])
-        self.assertEqual(manifest['appearance'], 'kitty')
+        self.assertEqual(manifest['appearance'], 'mint')
         self.assertEqual(files['index.html'].count(b'./runjs-relative-lines.js'), 1)
         self.assertEqual(files['runjs-relative-lines.js'],
                          (ROOT / 'patches/runjs-4.1.0/runjs-relative-lines.js').read_bytes())
@@ -240,7 +264,7 @@ class PatchTests(unittest.TestCase):
     def test_profile_rejects_unexpected_package_entry(self):
         self.files['package.json'] = b'{"name":"runjs","version":"4.1.0","main":"custom.js"}'
         self.make_app()
-        result = self.build('--appearance', 'kitty')
+        result = self.build('--appearance', 'mint')
         self.assertNotEqual(result.returncode, 0)
         self.assertIn('Unexpected RunJS package entry point', result.stderr)
 
@@ -376,7 +400,7 @@ class PatchTests(unittest.TestCase):
         self.assertIn('Unsupported native bundle fingerprint', result.stderr)
 
     def test_host_build_adds_nested_modules_and_preserves_native_bundles(self):
-        manifest = self.host_build('--appearance', 'kitty', '--relative-lines')
+        manifest = self.host_build('--appearance', 'mint', '--relative-lines')
         builder = load_script('build-patch.py')
         header, raw, payload = builder.parse_archive((self.output / 'app.patched.asar').read_bytes())
         entries = dict(builder.packed_files(header['files']))
@@ -388,11 +412,11 @@ class PatchTests(unittest.TestCase):
             self.assertEqual(builder.content(payload, entries[name]), self.files[name])
         package = json.loads(builder.content(payload, entries['package.json']))
         self.assertTrue(package['runjsVimBridge']['hostCommands'])
-        self.assertEqual(package['runjsVimBridge']['appearance'], 'kitty')
+        self.assertEqual(package['runjsVimBridge']['appearance'], 'mint')
         self.assertEqual(builder.content(payload, entries['index.html']).count(b'./runjs-ex-commands.js'), 1)
 
     def test_host_upgrade_can_remove_visuals_without_disabling_commands(self):
-        self.host_build('--appearance', 'kitty'); self.apply_build_to_fixture()
+        self.host_build('--appearance', 'mint'); self.apply_build_to_fixture()
         self.host_build('--upgrade'); self.apply_build_to_fixture()
         self.host_build('--upgrade')
         builder = load_script('build-patch.py')

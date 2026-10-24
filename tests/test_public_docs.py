@@ -57,6 +57,14 @@ class PublicDocsTests(unittest.TestCase):
         self.assertIn('## Source Hygiene', development)
         self.assertNotIn('## Publication Review', development)
 
+    def test_appearance_docs_name_the_implemented_palette_without_terminal_branding(self):
+        appearance = (ROOT / 'docs/appearance.md').read_text()
+        self.assertIn('# Mint Dark Appearance', appearance)
+        self.assertIn('--appearance mint', appearance)
+        self.assertIn('0.85', appearance)
+        for document in [ROOT / 'README.md', ROOT / 'AGENTS.md', *(ROOT / 'docs').glob('*.md')]:
+            self.assertNotIn('kitty', document.read_text().lower(), document.name)
+
 
 if __name__ == '__main__':
     unittest.main()

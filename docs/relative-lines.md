@@ -26,10 +26,10 @@ For an existing bridge, keep the accepted appearance while adding relative numbe
 
 ```sh
 python3 scripts/build-patch.py --app "$RUNJS_APP" \
-  --upgrade --appearance kitty --relative-lines
+  --upgrade --appearance mint --relative-lines
 ```
 
-For an unpatched app, omit `--upgrade`. Omit `--appearance kitty` to keep native
+For an unpatched app, omit `--upgrade`. Omit `--appearance mint` to keep native
 appearance. Quit RunJS and install normally; every install gets a new backup.
 Repeat `--relative-lines` in future builds if you want to retain the feature.
 

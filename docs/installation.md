@@ -39,10 +39,10 @@ build/
 For another output directory, pass `--output` with your directory, then use that
 same directory with the installer's `--build-dir` option.
 
-To include the optional dark/translucent profile and dark Web View defaults:
+To include the optional Mint Dark profile and dark Web View defaults:
 
 ```sh
-python3 scripts/build-patch.py --app "$RUNJS_APP" --appearance kitty
+python3 scripts/build-patch.py --app "$RUNJS_APP" --appearance mint
 ```
 
 See [appearance](appearance.md) for its palette, behavior, and limitations.
@@ -130,7 +130,7 @@ With Vim Keys disabled, the indicator reads `VIM OFF`.
 
 The patch translates its own text to English; it does not rewrite native
 settings, change the application's locale, or enable Vim Keys automatically.
-With `--appearance kitty`, also check the editor backdrop, an empty Web View,
+With `--appearance mint`, also check the editor backdrop, an empty Web View,
 and an exercise that explicitly defines its own background/text colors.
 
 ## Restore or Update
@@ -152,7 +152,7 @@ For a recognized bridge 1.0.0 through 1.4.0 installation, an explicit upgrade
 can replace our assets without stacking HTML references:
 
 ```sh
-python3 scripts/build-patch.py --app "$RUNJS_APP" --upgrade --appearance kitty
+python3 scripts/build-patch.py --app "$RUNJS_APP" --upgrade --appearance mint
 ```
 
 Add `--relative-lines` if desired; repeat every optional flag you want to keep.

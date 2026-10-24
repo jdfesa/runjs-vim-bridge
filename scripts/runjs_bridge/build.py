@@ -7,7 +7,7 @@ from pathlib import Path
 import plistlib
 
 from .archive import digest, parse_archive, packed_files, append_files, verify
-from .composition import ROOT, PATCH_VERSION, compose
+from .composition import ROOT, PATCH_VERSION, compose, normalize_appearance
 
 def main():
     parser = argparse.ArgumentParser(description='Build the patch without modifying RunJS.')
@@ -15,8 +15,9 @@ def main():
                         help='Path to your RunJS 4.1.0 app bundle.')
     parser.add_argument('--output', type=Path, default=ROOT / 'build',
                         help='Build directory (default: build/ in this checkout).')
-    parser.add_argument('--appearance', choices=['native', 'kitty'], default='native',
-                        help='Optional built-in appearance profile (default: native).')
+    parser.add_argument('--appearance', type=normalize_appearance,
+                        choices=['native', 'mint'], default='native',
+                        help='Optional Mint Dark profile (mint); default: native appearance.')
     parser.add_argument('--upgrade', action='store_true',
                         help='Replace a recognized earlier bridge patch; back up before installing.')
     parser.add_argument('--relative-lines', action='store_true',

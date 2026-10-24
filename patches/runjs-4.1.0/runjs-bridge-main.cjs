@@ -2,7 +2,8 @@
 'use strict';
 
 const config = require('./package.json').runjsVimBridge || {};
-if (config.appearance === 'kitty') require('./runjs-appearance-main.cjs');
+// Accept the legacy profile ID when reading an earlier bridge configuration.
+if (['mint', 'kitty'].includes(config.appearance)) require('./runjs-appearance-main.cjs');
 const bridge = config.hostCommands
   ? require('./bridge-host/main.cjs').install(require('electron'), __dirname)
   : null;
