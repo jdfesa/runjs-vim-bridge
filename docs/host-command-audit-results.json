@@ -1,0 +1,389 @@
+{
+  "date": "2026-10-24",
+  "engine": "5.65.17",
+  "bridge": "1.4.0",
+  "scope": "Real bundled parser and mappings, synthetic host only; native persistence, dialog and routing unverified",
+  "cases": 32,
+  "passed": 32,
+  "results": [
+    {
+      "input": "w",
+      "expected": [
+        "save"
+      ],
+      "actual": [
+        "save"
+      ],
+      "notices": [
+        "File save completed."
+      ],
+      "pass": true
+    },
+    {
+      "input": "write",
+      "expected": [
+        "save"
+      ],
+      "actual": [
+        "save"
+      ],
+      "notices": [
+        "File save completed."
+      ],
+      "pass": true
+    },
+    {
+      "input": "w!",
+      "expected": [
+        "save"
+      ],
+      "actual": [
+        "save"
+      ],
+      "notices": [
+        "File save completed."
+      ],
+      "pass": true
+    },
+    {
+      "input": "wq",
+      "expected": [
+        "save",
+        "close"
+      ],
+      "actual": [
+        "save",
+        "close"
+      ],
+      "notices": [],
+      "pass": true
+    },
+    {
+      "input": "wq!",
+      "expected": [
+        "save",
+        "close"
+      ],
+      "actual": [
+        "save",
+        "close"
+      ],
+      "notices": [],
+      "pass": true
+    },
+    {
+      "input": "q",
+      "expected": [],
+      "actual": [],
+      "notices": [
+        "E37: No write since last change (add ! to discard)."
+      ],
+      "pass": true
+    },
+    {
+      "input": "quit",
+      "expected": [],
+      "actual": [],
+      "notices": [
+        "E37: No write since last change (add ! to discard)."
+      ],
+      "pass": true
+    },
+    {
+      "input": "q!",
+      "expected": [
+        "close"
+      ],
+      "actual": [
+        "close"
+      ],
+      "notices": [],
+      "pass": true
+    },
+    {
+      "input": "quit!",
+      "expected": [
+        "close"
+      ],
+      "actual": [
+        "close"
+      ],
+      "notices": [],
+      "pass": true
+    },
+    {
+      "input": "x",
+      "expected": [
+        "save",
+        "close"
+      ],
+      "actual": [
+        "save",
+        "close"
+      ],
+      "notices": [],
+      "pass": true
+    },
+    {
+      "input": "xit",
+      "expected": [
+        "save",
+        "close"
+      ],
+      "actual": [
+        "save",
+        "close"
+      ],
+      "notices": [],
+      "pass": true
+    },
+    {
+      "input": "exit",
+      "expected": [
+        "save",
+        "close"
+      ],
+      "actual": [
+        "save",
+        "close"
+      ],
+      "notices": [],
+      "pass": true
+    },
+    {
+      "input": "qa",
+      "expected": [],
+      "actual": [],
+      "notices": [
+        "E37: No write since last change (add ! to discard)."
+      ],
+      "pass": true
+    },
+    {
+      "input": "qall!",
+      "expected": [
+        "quit"
+      ],
+      "actual": [
+        "quit"
+      ],
+      "notices": [],
+      "pass": true
+    },
+    {
+      "input": "qa!",
+      "expected": [
+        "quit"
+      ],
+      "actual": [
+        "quit"
+      ],
+      "notices": [],
+      "pass": true
+    },
+    {
+      "input": "wa",
+      "expected": [
+        "save"
+      ],
+      "actual": [
+        "save"
+      ],
+      "notices": [
+        "File save completed."
+      ],
+      "pass": true
+    },
+    {
+      "input": "wall",
+      "expected": [
+        "save"
+      ],
+      "actual": [
+        "save"
+      ],
+      "notices": [
+        "File save completed."
+      ],
+      "pass": true
+    },
+    {
+      "input": "wqa",
+      "expected": [
+        "save",
+        "quit"
+      ],
+      "actual": [
+        "save",
+        "quit"
+      ],
+      "notices": [],
+      "pass": true
+    },
+    {
+      "input": "wqall",
+      "expected": [
+        "save",
+        "quit"
+      ],
+      "actual": [
+        "save",
+        "quit"
+      ],
+      "notices": [],
+      "pass": true
+    },
+    {
+      "input": "xa",
+      "expected": [
+        "save",
+        "quit"
+      ],
+      "actual": [
+        "save",
+        "quit"
+      ],
+      "notices": [],
+      "pass": true
+    },
+    {
+      "input": "xall",
+      "expected": [
+        "save",
+        "quit"
+      ],
+      "actual": [
+        "save",
+        "quit"
+      ],
+      "notices": [],
+      "pass": true
+    },
+    {
+      "input": "sav",
+      "expected": [
+        "saveas"
+      ],
+      "actual": [
+        "saveas"
+      ],
+      "notices": [
+        "File save completed."
+      ],
+      "pass": true
+    },
+    {
+      "input": "saveas",
+      "expected": [
+        "saveas"
+      ],
+      "actual": [
+        "saveas"
+      ],
+      "notices": [
+        "File save completed."
+      ],
+      "pass": true
+    },
+    {
+      "input": "w filename.ts",
+      "expected": [],
+      "actual": [],
+      "notices": [
+        "E488: Filenames, shell commands and extra arguments are not supported; use native Save As."
+      ],
+      "pass": true
+    },
+    {
+      "input": "w !shell",
+      "expected": [],
+      "actual": [],
+      "notices": [
+        "E488: Filenames, shell commands and extra arguments are not supported; use native Save As."
+      ],
+      "pass": true
+    },
+    {
+      "input": "1,2w",
+      "expected": [],
+      "actual": [],
+      "notices": [
+        "E481: Ranges are not supported by host commands."
+      ],
+      "pass": true
+    },
+    {
+      "input": "%w",
+      "expected": [],
+      "actual": [],
+      "notices": [
+        "E481: Ranges are not supported by host commands."
+      ],
+      "pass": true
+    },
+    {
+      "input": "q | quit!",
+      "expected": [],
+      "actual": [],
+      "notices": [
+        "E488: Filenames, shell commands and extra arguments are not supported; use native Save As."
+      ],
+      "pass": true
+    },
+    {
+      "input": "ZZ",
+      "expected": [
+        "save",
+        "close"
+      ],
+      "actual": [
+        "save",
+        "close"
+      ],
+      "notices": [],
+      "pass": true
+    },
+    {
+      "input": "ZQ",
+      "expected": [
+        "close"
+      ],
+      "actual": [
+        "close"
+      ],
+      "notices": [],
+      "pass": true
+    },
+    {
+      "input": "wq-cancel",
+      "expected": [
+        "save"
+      ],
+      "actual": [
+        "save"
+      ],
+      "notices": [
+        "Save canceled; nothing was closed."
+      ],
+      "pass": true
+    },
+    {
+      "input": "x-clean",
+      "expected": [
+        "close"
+      ],
+      "actual": [
+        "close"
+      ],
+      "notices": [],
+      "pass": true
+    }
+  ],
+  "metadata": {
+    "bundle_sha256": "469ba2be820babe8b76c490209def8e09de0d3b479770b6064cd210d34054243",
+    "source_sha256": {
+      "patches/runjs-4.1.0/bridge-host/commands.cjs": "092e8164b697e154ae40922109698df26dec786fb1788e8eb2f893c9d990ce81",
+      "tests/host-audit/runner.js": "6f43ad2d8526161dc3be4cb3ddb66f6d91d4b211d57622bafb9b6c898ef11ba1"
+    }
+  }
+}

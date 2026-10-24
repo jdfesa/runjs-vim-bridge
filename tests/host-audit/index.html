@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>RunJS host-command parsing audit</title>
+<link rel="stylesheet" href="engine.css">
+<style>body{background:#17221d;color:#ddf4e6;font:16px system-ui;margin:24px}.CodeMirror{height:140px}pre{white-space:pre-wrap}button{padding:10px}</style>
+</head><body><h1>Host-command parsing audit</h1>
+<p>Real bundled Vim parser + our policy + synthetic host. No actual file save, native dialog or app quit.</p>
+<button id="run">Run host audit</button><p id="status">Ready</p><div id="editor"></div><pre id="json"></pre>
+<script src="engine.js"></script><script src="host-commands.js"></script><script src="runner.js"></script>
+</body></html>

@@ -1,0 +1,77 @@
+/* Kitty-inspired black/mint/amber profile. Text always remains fully opaque. */
+/* Layered !important rules outrank the bundled themes' unlayered !important rules. */
+@layer runjs-bridge-appearance {
+:root {
+  --bridge-background: #000000;
+  --bridge-foreground: #d8ffd8;
+  --bridge-green: #00e65c;
+  --bridge-mint: #66ff99;
+  --bridge-amber: #ff9d00;
+  --bridge-muted: #80a388;
+  --bridge-border: #24472e;
+  color-scheme: dark;
+}
+html { background: transparent !important; }
+body { background: rgba(0, 0, 0, .85); color: var(--bridge-foreground); }
+.app-skeleton, .app-skeleton__tab-bar, .app-skeleton__activity-bar,
+.app-skeleton__editor, .activity-bar, .tab-bar, .status-bar, .panel-group,
+.panel, .panel .control-bar, .tab.active, .console-output,
+.CodeMirror, .CodeMirror-gutters, .webview, .false-webview {
+  background: transparent !important;
+  color: var(--bridge-foreground) !important;
+  border-color: var(--bridge-border) !important;
+}
+.activity-bar, .tab-bar, .status-bar, .panel .control-bar {
+  background: rgba(0, 0, 0, .12) !important;
+}
+.tab.active { box-shadow: inset 0 2px var(--bridge-amber) !important; }
+.tab:not(.active) { color: var(--bridge-muted) !important; }
+.resize-handle { background: var(--bridge-border) !important; }
+.CodeMirror-linenumber { color: var(--bridge-muted) !important; }
+.CodeMirror-cursor { border-left-color: var(--bridge-green) !important; }
+.cm-fat-cursor .CodeMirror-cursor { background: var(--bridge-green) !important; }
+.CodeMirror-selected, .CodeMirror-focused .CodeMirror-selected {
+  background: rgba(255, 230, 128, .25) !important;
+}
+.CodeMirror-activeline-background { background: rgba(102, 255, 153, .045) !important; }
+.CodeMirror-matchingbracket {
+  color: var(--bridge-foreground) !important;
+  background: rgba(0, 230, 92, .16) !important;
+  outline: 1px solid var(--bridge-green) !important;
+}
+.CodeMirror span.cm-keyword, .console-output .cm-keyword, .hljs-keyword,
+.CodeMirror span.cm-operator, .CodeMirror span.cm-tag {
+  color: var(--bridge-amber) !important;
+}
+.CodeMirror span.cm-string, .CodeMirror span.cm-string-2,
+.console-output .cm-string, .hljs-string { color: #98ff98 !important; }
+.CodeMirror span.cm-number, .CodeMirror span.cm-atom,
+.console-output .cm-number, .hljs-number, .hljs-literal { color: #ffc94a !important; }
+.CodeMirror span.cm-variable, .CodeMirror span.cm-variable-2,
+.CodeMirror span.cm-def, .CodeMirror span.cm-property,
+.console-output .cm-variable, .console-output .cm-property {
+  color: var(--bridge-foreground) !important;
+}
+.CodeMirror span.cm-builtin, .CodeMirror span.cm-type,
+.CodeMirror span.cm-attribute, .hljs-built_in { color: var(--bridge-mint) !important; }
+.CodeMirror span.cm-comment, .console-output .cm-comment,
+.hljs-comment { color: var(--bridge-muted) !important; }
+.CodeMirror-dialog, .CodeMirror-hints, .CodeMirror-lsp-tooltip,
+.sidebar-tile, .chat-card pre, .chat-input, .theme-overlay {
+  background: #08110b !important;
+  color: var(--bridge-foreground) !important;
+  border-color: var(--bridge-border) !important;
+}
+.CodeMirror-dialog input { color: var(--bridge-foreground) !important; }
+.CodeMirror-hint { color: var(--bridge-foreground) !important; }
+.CodeMirror-hint-active { background: #183c24 !important; }
+#runjs-vim-mode-bar {
+  background: rgba(0, 0, 0, .25) !important;
+  color: var(--bridge-foreground) !important;
+  border-color: var(--bridge-border) !important;
+}
+#runjs-vim-mode-label { background: var(--bridge-amber) !important; color: #000 !important; }
+#runjs-vim-mode-bar[data-mode='insert'] #runjs-vim-mode-label {
+  background: var(--bridge-green) !important;
+}
+}

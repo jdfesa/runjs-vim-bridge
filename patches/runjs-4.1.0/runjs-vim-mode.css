@@ -1,0 +1,44 @@
+/* Reserve space without covering the editor or the RunJS controls. */
+html.runjs-vim-mode-enabled #root { bottom: 30px !important; }
+#runjs-vim-mode-bar {
+  position: fixed;
+  inset: auto 0 0 0;
+  height: 30px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 12px;
+  border-top: 1px solid #384154;
+  background: #151922;
+  color: #e2e8f0;
+  font: 12px/1.3 -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  user-select: none;
+  z-index: 10000;
+}
+#runjs-vim-mode-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  min-width: 68px;
+  padding: 3px 9px;
+  border-radius: 4px;
+  background: #9dc6ff;
+  color: #101827;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: .5px;
+}
+#runjs-vim-mode-bar[data-mode='insert'] #runjs-vim-mode-label { background: #9ce2b8; }
+#runjs-vim-mode-bar[data-mode^='visual'] #runjs-vim-mode-label { background: #d6b4ff; }
+#runjs-vim-mode-bar[data-mode='replace'] #runjs-vim-mode-label { background: #ffbf95; }
+#runjs-vim-mode-bar[data-mode='off'] #runjs-vim-mode-label,
+#runjs-vim-mode-bar[data-mode='loading'] #runjs-vim-mode-label { background: #c4cbd7; }
+#runjs-vim-mode-hint { overflow: hidden; text-overflow: ellipsis; }
+@media (max-width: 460px) {
+  #runjs-vim-mode-bar { gap: 8px; padding-inline: 8px; }
+  #runjs-vim-mode-hint { font-size: 10px; }
+}

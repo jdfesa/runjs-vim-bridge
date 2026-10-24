@@ -1,0 +1,20 @@
+# Generated artifacts and local backups; never publish them.
+build/
+backups/
+original-files/
+*.app/
+*.asar
+*.zip
+*.dmg
+*.blockmap
+Info.patched.plist
+manifest.json
+validation.json
+native-startup.log
+
+# System files and test caches.
+.DS_Store
+.nvimlog
+__pycache__/
+*.py[cod]
+.pytest_cache/

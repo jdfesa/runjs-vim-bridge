@@ -1,0 +1,1761 @@
+{
+  "metadata": {
+    "runjs": "4.1.0",
+    "bundle_sha256": "469ba2be820babe8b76c490209def8e09de0d3b479770b6064cd210d34054243",
+    "module_sha256": {
+      "15237": "43fb2be1d31efeb672f2e4394069d1eb42d653211c8c4f231df331ea8244a198",
+      "23653": "02247c85e7f281833abaac2d3ea74a2298481e182099540a7c14b82cd0465b0e",
+      "28527": "4d09dcff107e114004031d69ccdd3c337d4096efbad9206032f6230dae7ec6f0",
+      "71275": "4d459e371b7d4f746a88714c74a4233a5a1d1ab14683706d5512d6befeede9e7",
+      "97923": "ccb8c7c6cbac12954d8b97c9907598ee8df2430e85d6b472348e69d09a34df43"
+    },
+    "scope": "isolated engine; no native RunJS routing, file save or quit test",
+    "cases_sha256": "f33b955f64c284aaee7014aa30ddfecdcd82e5cf09c860be259c6db70b235802",
+    "codemirror": "5.65.17",
+    "neovim": "0.11.4",
+    "reference_options": {
+      "smartindent": false,
+      "startofline": false,
+      "filetype": "",
+      "expandtab": true,
+      "shiftwidth": 2,
+      "tabstop": 2,
+      "autoindent": false
+    },
+    "save_hook_in_engine": "undefined",
+    "editor_save_method": "undefined"
+  },
+  "summary": {
+    "pass": 59,
+    "difference": 5,
+    "host-boundary": 3
+  },
+  "cases": [
+    {
+      "id": "insert-before",
+      "label": "i \u2026 <Esc>",
+      "source": "visual-guide",
+      "status": "pass",
+      "actual": {
+        "text": "Hi alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          2
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "Hi alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          2
+        ],
+        "id": "insert-before",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "motion-h",
+      "label": "h",
+      "source": "visual-guide",
+      "status": "pass",
+      "actual": {
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          2
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          2
+        ],
+        "id": "motion-h",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "motion-j",
+      "label": "j",
+      "source": "visual-guide",
+      "status": "pass",
+      "actual": {
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          1,
+          2
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          1,
+          2
+        ],
+        "id": "motion-j",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "motion-k",
+      "label": "k",
+      "source": "visual-guide",
+      "status": "pass",
+      "actual": {
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          1,
+          2
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          1,
+          2
+        ],
+        "id": "motion-k",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "motion-l",
+      "label": "l",
+      "source": "visual-guide",
+      "status": "pass",
+      "actual": {
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          1
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          1
+        ],
+        "id": "motion-l",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "motion-w",
+      "label": "w",
+      "source": "visual-guide",
+      "status": "pass",
+      "actual": {
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          6
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          6
+        ],
+        "id": "motion-w",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "motion-b",
+      "label": "b",
+      "source": "visual-guide",
+      "status": "pass",
+      "actual": {
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          6
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          6
+        ],
+        "id": "motion-b",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "motion-bol",
+      "label": "0",
+      "source": "visual-guide",
+      "status": "pass",
+      "actual": {
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          0
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          0
+        ],
+        "id": "motion-bol",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "motion-eol",
+      "label": "$",
+      "source": "visual-guide",
+      "status": "pass",
+      "actual": {
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          9
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          9
+        ],
+        "id": "motion-eol",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "append",
+      "label": "a \u2026 <Esc>",
+      "source": "visual-guide",
+      "status": "pass",
+      "actual": {
+        "text": "a!lpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          1
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "a!lpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          1
+        ],
+        "id": "append",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "open-below",
+      "label": "o \u2026 <Esc>",
+      "source": "visual-guide",
+      "status": "pass",
+      "actual": {
+        "text": "alpha beta\nnew\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          1,
+          2
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta\nnew\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          1,
+          2
+        ],
+        "id": "open-below",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "delete-char",
+      "label": "x",
+      "source": "visual-guide",
+      "status": "pass",
+      "actual": {
+        "text": "lpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          0
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "lpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          0
+        ],
+        "id": "delete-char",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "delete-line",
+      "label": "dd",
+      "source": "visual-guide",
+      "status": "difference",
+      "actual": {
+        "text": "alpha beta\nepsilon zeta\neta theta",
+        "cursor": [
+          1,
+          0
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta\nepsilon zeta\neta theta",
+        "cursor": [
+          1,
+          3
+        ],
+        "id": "delete-line",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "undo",
+      "label": "u",
+      "source": "visual-guide",
+      "status": "pass",
+      "actual": {
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          0
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          0
+        ],
+        "id": "undo",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "redo",
+      "label": "<C-r>",
+      "source": "visual-guide",
+      "status": "pass",
+      "actual": {
+        "text": "lpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          0
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "lpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          0
+        ],
+        "id": "redo",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "host-w",
+      "label": ":w<CR>",
+      "source": "visual-guide",
+      "status": "host-boundary",
+      "actual": {
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          0
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": null
+    },
+    {
+      "id": "host-q",
+      "label": ":q<CR>",
+      "source": "visual-guide",
+      "status": "host-boundary",
+      "actual": {
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          0
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [
+        "Not an editor command \":q\""
+      ],
+      "expected": null
+    },
+    {
+      "id": "host-wq",
+      "label": ":wq<CR>",
+      "source": "visual-guide",
+      "status": "host-boundary",
+      "actual": {
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          0
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [
+        "Not an editor command \":wq\""
+      ],
+      "expected": null
+    },
+    {
+      "id": "yank-put",
+      "label": "yy p",
+      "source": "learning-native",
+      "status": "pass",
+      "actual": {
+        "text": "alpha beta\nalpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          1,
+          0
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta\nalpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          1,
+          0
+        ],
+        "id": "yank-put",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "yank-put-before",
+      "label": "yy P",
+      "source": "learning-native",
+      "status": "pass",
+      "actual": {
+        "text": "alpha beta\ngamma delta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          1,
+          0
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta\ngamma delta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          1,
+          0
+        ],
+        "id": "yank-put-before",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "count-yank",
+      "label": "3yy P",
+      "source": "learning-native",
+      "status": "pass",
+      "actual": {
+        "text": "alpha beta\ngamma delta\nepsilon zeta\nalpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          0
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta\ngamma delta\nepsilon zeta\nalpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          0
+        ],
+        "id": "count-yank",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "count-delete",
+      "label": "3dd",
+      "source": "learning-native",
+      "status": "pass",
+      "actual": {
+        "text": "eta theta",
+        "cursor": [
+          0,
+          0
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "eta theta",
+        "cursor": [
+          0,
+          0
+        ],
+        "id": "count-delete",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "visual-char-yank",
+      "label": "v l y p",
+      "source": "learning-native",
+      "status": "pass",
+      "actual": {
+        "text": "aallpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          2
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "aallpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          2
+        ],
+        "id": "visual-char-yank",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "visual-char-delete",
+      "label": "v l d",
+      "source": "learning-native",
+      "status": "pass",
+      "actual": {
+        "text": "pha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          0
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "pha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          0
+        ],
+        "id": "visual-char-delete",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "visual-line-cut",
+      "label": "V 2j d",
+      "source": "learning-native",
+      "status": "pass",
+      "actual": {
+        "text": "eta theta",
+        "cursor": [
+          0,
+          0
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "eta theta",
+        "cursor": [
+          0,
+          0
+        ],
+        "id": "visual-line-cut",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "visual-line-yank",
+      "label": "V j y G p",
+      "source": "learning-native",
+      "status": "pass",
+      "actual": {
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta\nalpha beta\ngamma delta",
+        "cursor": [
+          4,
+          0
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta\nalpha beta\ngamma delta",
+        "cursor": [
+          4,
+          0
+        ],
+        "id": "visual-line-yank",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "count-down",
+      "label": "5j",
+      "source": "learning-native",
+      "status": "pass",
+      "actual": {
+        "text": "line 1\nline 2\nline 3\nline 4\nline 5\nline 6\nline 7\nline 8",
+        "cursor": [
+          5,
+          0
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "line 1\nline 2\nline 3\nline 4\nline 5\nline 6\nline 7\nline 8",
+        "cursor": [
+          5,
+          0
+        ],
+        "id": "count-down",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "count-up",
+      "label": "3k",
+      "source": "learning-native",
+      "status": "pass",
+      "actual": {
+        "text": "line 1\nline 2\nline 3\nline 4\nline 5\nline 6\nline 7\nline 8",
+        "cursor": [
+          2,
+          0
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "line 1\nline 2\nline 3\nline 4\nline 5\nline 6\nline 7\nline 8",
+        "cursor": [
+          2,
+          0
+        ],
+        "id": "count-up",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "insert-first",
+      "label": "I \u2026 <Esc>",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "  Hi alpha beta",
+        "cursor": [
+          0,
+          4
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "  Hi alpha beta",
+        "cursor": [
+          0,
+          4
+        ],
+        "id": "insert-first",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "append-end",
+      "label": "A \u2026 <Esc>",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "alpha beta!\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          10
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta!\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          10
+        ],
+        "id": "append-end",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "open-above",
+      "label": "O \u2026 <Esc>",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "alpha beta\nnew\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          1,
+          2
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta\nnew\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          1,
+          2
+        ],
+        "id": "open-above",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "word-end",
+      "label": "e",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          4
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          4
+        ],
+        "id": "word-end",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "first-nonblank",
+      "label": "^",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "  alpha beta",
+        "cursor": [
+          0,
+          2
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "  alpha beta",
+        "cursor": [
+          0,
+          2
+        ],
+        "id": "first-nonblank",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "first-line",
+      "label": "gg",
+      "source": "extended-core",
+      "status": "difference",
+      "actual": {
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          0
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          4
+        ],
+        "id": "first-line",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "last-line",
+      "label": "G",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          3,
+          0
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          3,
+          0
+        ],
+        "id": "last-line",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "delete-word",
+      "label": "dw",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          0
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          0
+        ],
+        "id": "delete-word",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "change-word",
+      "label": "cw \u2026 <Esc>",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "new beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          2
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "new beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          2
+        ],
+        "id": "change-word",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "change-line",
+      "label": "cc \u2026 <Esc>",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "alpha beta\nnew\nepsilon zeta\neta theta",
+        "cursor": [
+          1,
+          2
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta\nnew\nepsilon zeta\neta theta",
+        "cursor": [
+          1,
+          2
+        ],
+        "id": "change-line",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "delete-to-end",
+      "label": "D",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "alp\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          2
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alp\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          2
+        ],
+        "id": "delete-to-end",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "change-to-end",
+      "label": "C \u2026 <Esc>",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "alpnew\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          5
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpnew\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          5
+        ],
+        "id": "change-to-end",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "change-inner-word",
+      "label": "ciw \u2026 <Esc>",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "new beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          2
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "new beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          2
+        ],
+        "id": "change-inner-word",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "delete-inner-quotes",
+      "label": "di\"",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "const name = \"\";",
+        "cursor": [
+          0,
+          14
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "const name = \"\";",
+        "cursor": [
+          0,
+          14
+        ],
+        "id": "delete-inner-quotes",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "delete-around-parens",
+      "label": "da(",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "const n = fn;",
+        "cursor": [
+          0,
+          12
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "const n = fn;",
+        "cursor": [
+          0,
+          12
+        ],
+        "id": "delete-around-parens",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "multiply-counts",
+      "label": "2d3w",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "seven eight",
+        "cursor": [
+          0,
+          0
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "seven eight",
+        "cursor": [
+          0,
+          0
+        ],
+        "id": "multiply-counts",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "replace-char",
+      "label": "rX",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "Xlpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          0
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "Xlpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          0
+        ],
+        "id": "replace-char",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "replace-mode",
+      "label": "R \u2026 <Esc>",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "XYZha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          2
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "XYZha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          2
+        ],
+        "id": "replace-mode",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "repeat-delete",
+      "label": "x .",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "pha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          0
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "pha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          0
+        ],
+        "id": "repeat-delete",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "repeat-change",
+      "label": "ciw \u2026 <Esc> w .",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "new new three",
+        "cursor": [
+          0,
+          6
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "new new three",
+        "cursor": [
+          0,
+          6
+        ],
+        "id": "repeat-change",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "find-f",
+      "label": "fa",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "alpha beta gamma",
+        "cursor": [
+          0,
+          4
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta gamma",
+        "cursor": [
+          0,
+          4
+        ],
+        "id": "find-f",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "find-t",
+      "label": "ta",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "alpha beta gamma",
+        "cursor": [
+          0,
+          3
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta gamma",
+        "cursor": [
+          0,
+          3
+        ],
+        "id": "find-t",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "find-F",
+      "label": "Fa",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "alpha beta gamma",
+        "cursor": [
+          0,
+          12
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta gamma",
+        "cursor": [
+          0,
+          12
+        ],
+        "id": "find-F",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "find-T",
+      "label": "Ta",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "alpha beta gamma",
+        "cursor": [
+          0,
+          13
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta gamma",
+        "cursor": [
+          0,
+          13
+        ],
+        "id": "find-T",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "repeat-find",
+      "label": "fa ; ,",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "alpha beta gamma",
+        "cursor": [
+          0,
+          4
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta gamma",
+        "cursor": [
+          0,
+          4
+        ],
+        "id": "repeat-find",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "match-pair",
+      "label": "%",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "fn(alpha, beta)",
+        "cursor": [
+          0,
+          14
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "fn(alpha, beta)",
+        "cursor": [
+          0,
+          14
+        ],
+        "id": "match-pair",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "join",
+      "label": "J",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "alpha beta gamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          10
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta gamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          10
+        ],
+        "id": "join",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "register",
+      "label": "\"ayy j \"ap",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "alpha beta\ngamma delta\nalpha beta\nepsilon zeta\neta theta",
+        "cursor": [
+          2,
+          0
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta\ngamma delta\nalpha beta\nepsilon zeta\neta theta",
+        "cursor": [
+          2,
+          0
+        ],
+        "id": "register",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "macro",
+      "label": "qa x j q @a",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "lpha beta\namma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          2,
+          0
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "lpha beta\namma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          2,
+          0
+        ],
+        "id": "macro",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "mark",
+      "label": "ma G `a",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          3
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          3
+        ],
+        "id": "mark",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "visual-block",
+      "label": "<C-v> j l d",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "cd\ngh\nijkl",
+        "cursor": [
+          0,
+          0
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "cd\ngh\nijkl",
+        "cursor": [
+          0,
+          0
+        ],
+        "id": "visual-block",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "search-word",
+      "label": "* n N",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "one two one\nthree one",
+        "cursor": [
+          0,
+          8
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "one two one\nthree one",
+        "cursor": [
+          0,
+          8
+        ],
+        "id": "search-word",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "search-backward",
+      "label": "#",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "one two one\nthree one",
+        "cursor": [
+          0,
+          8
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "one two one\nthree one",
+        "cursor": [
+          0,
+          8
+        ],
+        "id": "search-backward",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "indent",
+      "label": ">>",
+      "source": "extended-core",
+      "status": "difference",
+      "actual": {
+        "text": "  alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          2
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "  alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          0
+        ],
+        "id": "indent",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "unindent",
+      "label": "<<",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "alpha\n  beta",
+        "cursor": [
+          0,
+          0
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha\n  beta",
+        "cursor": [
+          0,
+          0
+        ],
+        "id": "unindent",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "delete-line-at-start",
+      "label": "dd",
+      "source": "visual-guide",
+      "status": "pass",
+      "actual": {
+        "text": "alpha beta\nepsilon zeta\neta theta",
+        "cursor": [
+          1,
+          0
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta\nepsilon zeta\neta theta",
+        "cursor": [
+          1,
+          0
+        ],
+        "id": "delete-line-at-start",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "first-line-at-start",
+      "label": "gg",
+      "source": "extended-core",
+      "status": "pass",
+      "actual": {
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          0
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          0,
+          0
+        ],
+        "id": "first-line-at-start",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "last-line-from-column",
+      "label": "G",
+      "source": "extended-core",
+      "status": "difference",
+      "actual": {
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          3,
+          0
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha beta\ngamma delta\nepsilon zeta\neta theta",
+        "cursor": [
+          3,
+          4
+        ],
+        "id": "last-line-from-column",
+        "mode": "n"
+      }
+    },
+    {
+      "id": "unindent-from-column",
+      "label": "<<",
+      "source": "extended-core",
+      "status": "difference",
+      "actual": {
+        "text": "alpha\n  beta",
+        "cursor": [
+          0,
+          0
+        ],
+        "mode": "n",
+        "error": null
+      },
+      "notifications": [],
+      "expected": {
+        "error": null,
+        "text": "alpha\n  beta",
+        "cursor": [
+          0,
+          4
+        ],
+        "id": "unindent-from-column",
+        "mode": "n"
+      }
+    }
+  ],
+  "audit_date": "2026-10-24",
+  "limitations": [
+    "Isolated bundled-engine fixtures, not native RunJS menu/OS routing.",
+    "Synthetic ASCII exercises and explicit indentation options, not exhaustive Neovim compatibility.",
+    "Text insertion uses CodeMirror input operations; physical typing, IME and prompts need separate checks.",
+    "Host save/quit commands are boundaries, not clean-Neovim comparison fixtures."
+  ]
+}

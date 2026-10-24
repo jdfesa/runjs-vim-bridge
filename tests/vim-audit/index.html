@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>RunJS basic-command audit</title>
+<link rel="stylesheet" href="engine.css">
+<style>
+body{margin:0;padding:24px;background:#111712;color:#d8ffd8;font:14px/1.5 system-ui;overflow:auto}
+h1{font-size:21px}button{padding:10px 18px;background:#183c24;color:inherit;border:1px solid #426e50;border-radius:5px;cursor:pointer}
+.CodeMirror{height:130px;background:#070b08!important;color:#d8ffd8!important;font:14px/1.5 monospace}
+table{border-collapse:collapse;width:100%;margin-top:20px}td,th{text-align:left;padding:7px;border-bottom:1px solid #24472e}
+.pass{color:#98ff98}.difference{color:#ffc94a}.boundary{color:#9dc6ff}pre{white-space:pre-wrap;word-break:break-word;font-size:11px}
+</style></head><body>
+<h1>RunJS 4.1.0 · basic-command engine audit</h1>
+<p>Synthetic text only. Compares the bundled Vim engine with clean Neovim.
+This does not test native RunJS shortcuts, disk saving, or quitting.</p>
+<button id="run">Run audit</button><p id="summary">Ready.</p>
+<div class="editor" id="editor-host"></div>
+<table><thead><tr><th>Command</th><th>Fixture</th><th>Result</th></tr></thead><tbody id="rows"></tbody></table>
+<details><summary>Machine-readable report</summary><pre id="json"></pre></details>
+<script src="engine.js"></script><script src="runner.js"></script>
+</body></html>

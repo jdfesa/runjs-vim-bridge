@@ -1,0 +1,12 @@
+/* Low-priority defaults only. Exercise styles and inline styles take precedence. */
+@layer runjs-bridge-defaults {
+  :where(html) {
+    color-scheme: dark;
+    background-color: rgba(0, 0, 0, .85);
+    color: #d8ffd8;
+  }
+  :where(body) {
+    background-color: transparent;
+    color: inherit;
+  }
+}
