@@ -1,6 +1,6 @@
 # RunJS Vim Bridge
 
-**An experimental, unofficial learning bridge from RunJS to Neovim.**
+**An educational proof of concept for personal Neovim practice inside RunJS.**
 
 The main goal is to bring **most default Neovim editing shortcuts into RunJS**,
 while keeping its JavaScript/TypeScript execution, preview, and sandbox workflow.
@@ -14,7 +14,7 @@ This is not a native Neovim integration or a replacement for RunJS's features.
 - Editing engine: RunJS's bundled CodeMirror Vim emulation, **not Neovim**.
 - Default `:w`, `:q[!]`, `:wq`, `:x`, `ZZ`/`ZQ` and all-tab variants.
 - Core native save/quit checks passed by user report; extended acceptance remains pending.
-- Local proof of concept; publication and the license for our code are pending.
+- Experimental learning project, not a supported RunJS extension or full Neovim runtime.
 
 ## Get Started
 
@@ -53,11 +53,12 @@ node --check patches/runjs-4.1.0/runjs-vim-mode.js
 Tests use synthetic app files and a simulated editor. They do not modify RunJS
 or establish full native keybinding compatibility.
 
-## Distribution
+## Project Scope
 
-Only our patch sources and tools belong here, not RunJS, its bundles, or backups.
-This project is not affiliated with RunJS or Neovim. Review the
-[RunJS EULA](https://runjs.app/eula) and resolve modification/distribution
-permissions before publishing; educational purpose alone does not grant permission.
-Choose a license for our code before release. Never publish app copies, generated
-archives, local manifests, or backups.
+This repository contains our bridge sources, tools, documentation, and synthetic
+test fixtures. It does not include RunJS, extracted bundles, app copies, or backups.
+The project is unofficial and is not affiliated with RunJS or Neovim.
+
+If you choose to try this experimental patch, you are responsible for your own
+installation and backups. Use disposable exercises first and review the documented
+version-specific limitations before relying on it for personal practice.
