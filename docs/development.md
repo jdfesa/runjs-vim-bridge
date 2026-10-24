@@ -85,6 +85,11 @@ A first import is one truthful baseline; do not fabricate historical commits.
 Local commits do not authorize creating a remote, choosing a license or publishing.
 
 Resolve RunJS permissions and choose a license for our code before release.
+The published [RunJS EULA](https://runjs.app/eula), reviewed on 2026-10-24,
+restricts modification, derivative works and reverse engineering of the app.
+Keeping the repository source-only does not by itself establish permission to
+publish this patch. Obtain the relevant authorization or qualified legal review
+before publication; this project does not claim legal clearance or vendor approval.
 Inspect every file to be published, even if Git has not been initialized. Exclude
 app archives, backups, local manifests, bundles, preferences, logs, and exercises.
 Use relative examples/user-supplied locations, not one person's installation.
