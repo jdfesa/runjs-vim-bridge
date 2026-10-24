@@ -57,9 +57,31 @@ python3 -m unittest discover -s tests -v
 node --test tests/*.cjs
 ```
 
+## Continuous Integration
+
+[CI](https://github.com/jdfesa/runjs-vim-bridge/actions/workflows/ci.yml) runs
+`npm test` on every push, pull request and manual dispatch. The README badge
+reports the main branch's actual workflow status, not a hardcoded passing label.
+
+| Runner | Node.js | Python |
+| --- | --- | --- |
+| Ubuntu | 22 | 3.12 |
+| macOS | 24 | 3.14 |
+
+Official setup/checkout actions are pinned to full commit SHA. The workflow uses
+read-only repository permissions, does not retain checkout credentials, and sets
+a ten-minute job timeout. It downloads no RunJS assets and needs no extra secrets
+or RTK installation. There are no automatic app installers or deployment jobs.
+
+These jobs validate portable tooling, synthetic app/editor/host tests, syntax and
+recorded-evidence guards. A passing Linux job does not establish native RunJS
+integration there. The private real-engine audits and native acceptance checklist
+remain separate, explicitly scoped work.
+
 | Layer | Proves | Does not prove |
 | --- | --- | --- |
 | Python synthetic apps | ASAR construction, integrity, refusal paths, restore | Real signing, launch, UI |
+| CI contract guards | Standard test command, triggers, action pins, minimal permissions and badge link | General YAML validation or a successful hosted run |
 | Public documentation guards | Short README, valid relative links, no machine-specific locations | Completeness of instructions or distribution rights |
 | Node simulated editor/DOM | English HUD, events, tab lifecycle, cleanup | Vim semantics, real layout, native key delivery |
 | Node simulated Electron | Scoped native actions, close tickets, sender rejection, bootstrap and appearance | Actual dialogs, persistence, licensing UI or vibrancy rendering |

@@ -1,5 +1,7 @@
 # RunJS Vim Bridge
 
+[![CI](https://github.com/jdfesa/runjs-vim-bridge/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/jdfesa/runjs-vim-bridge/actions/workflows/ci.yml)
+
 **An educational proof of concept for personal Neovim practice inside RunJS.**
 
 The main goal is to bring **most default Neovim editing shortcuts into RunJS**,

@@ -94,6 +94,9 @@
 - Prefix development shell commands with `rtk`; use `rtk proxy` for unsupported
   commands. RTK is not an end-user installation dependency.
 - Run Python safety tests, Node renderer tests, and JavaScript syntax checks.
+- Use npm test as the shared local/CI entry point; keep its package dependency-free.
+- CI runs synthetic checks with read-only permissions and pinned official actions.
+  Never download app assets, install RunJS or add deployment jobs to simulate validation.
 - Simulated editor tests prove HUD behavior, not Vim semantics or native routing.
 - Verify shortcuts against the pinned bundled engine; routing changes also need
   a native RunJS check. Record versions, fixtures, and limitations.
