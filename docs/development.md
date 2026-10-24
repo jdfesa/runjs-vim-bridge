@@ -78,11 +78,19 @@ recorded-evidence guards. A passing Linux job does not establish native RunJS
 integration there. The private real-engine audits and native acceptance checklist
 remain separate, explicitly scoped work.
 
+## Platform Validation
+
+Native integration has been verified with RunJS 4.1.0 on macOS. Native Linux and
+Windows integration has not been tested yet; the current installer handles macOS
+app bundles and signing tools. Synthetic Linux CI does not validate a native Linux
+installation. Other RunJS versions need new fingerprints and fixtures before the
+version-specific builder will accept them.
+
 | Layer | Proves | Does not prove |
 | --- | --- | --- |
 | Python synthetic apps | ASAR construction, integrity, refusal paths, restore | Real signing, launch, UI |
 | CI contract guards | Standard test command, triggers, action pins, minimal permissions and badge link | General YAML validation or a successful hosted run |
-| Public documentation guards | Short README, valid relative links, no machine-specific locations | Completeness of instructions or distribution rights |
+| Public documentation guards | Short README, valid relative links, no machine-specific locations | Actual app behavior or complete instructions |
 | Node simulated editor/DOM | English HUD, events, tab lifecycle, cleanup | Vim semantics, real layout, native key delivery |
 | Node simulated Electron | Scoped native actions, close tickets, sender rejection, bootstrap and appearance | Actual dialogs, persistence, licensing UI or vibrancy rendering |
 | Node synthetic save tracker/policy | Callback wait, cancel/error/races, dirty generations, forced scopes, cleanup | Actual native file save/quit |
@@ -111,7 +119,7 @@ workflow. Normal Python/Node tests guard its checked evidence and tool safety;
 they do not automatically rerun a browser or clean Neovim. The real audit uses
 only synthetic text and records a pinned editor fingerprint and reference version.
 
-## Publication Review
+## Contribution Workflow
 
 Use English [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 for local history, with coherent behavior changes and their related tests/docs.
@@ -120,15 +128,15 @@ Examples: `feat(ex): add native save and quit commands`,
 `refactor(tooling): separate archive and installation responsibilities`.
 Inspect the staged file list/diff and run relevant checks before committing.
 A first import is one truthful baseline; do not fabricate historical commits.
-Local commits do not authorize creating a remote, choosing a license or publishing.
+Remote updates and history rewrites require explicit direction.
 
-Resolve RunJS permissions and choose a license for our code before release.
-The published [RunJS EULA](https://runjs.app/eula), reviewed on 2026-10-24,
-restricts modification, derivative works and reverse engineering of the app.
-Keeping the repository source-only does not by itself establish permission to
-publish this patch. Obtain the relevant authorization or qualified legal review
-before publication; this project does not claim legal clearance or vendor approval.
-Inspect every file to be published, even if Git has not been initialized. Exclude
-app archives, backups, local manifests, bundles, preferences, logs, and exercises.
-Use relative examples/user-supplied locations, not one person's installation.
-Do not infer distribution rights from a public repository or educational intent.
+## Source Hygiene
+
+This personal educational prototype contains our bridge sources, tooling,
+documentation and synthetic fixtures, not an embedded RunJS or Neovim runtime.
+Keep original bundles untouched and native execution, feature availability,
+sandbox/preload/navigation controls and exercise-authored preview styles intact.
+
+Inspect the actual file list before committing or sharing changes. Exclude app
+archives, extracted bundles, backups, generated manifests, preferences, logs and
+personal exercises. Use relative examples and user-supplied app locations.

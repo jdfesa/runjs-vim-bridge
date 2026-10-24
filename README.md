@@ -11,7 +11,8 @@ This is not a native Neovim integration or a replacement for RunJS's features.
 
 ## Status
 
-- Target: **RunJS 4.1.0 on macOS**; other versions/platforms are unsupported.
+- Verified app target: **RunJS 4.1.0 on macOS**.
+- Native RunJS integration on Linux and Windows has not been tested yet.
 - Patch 1.4.0 source: native save/quit adapters, English HUD and optional visuals.
 - Editing engine: RunJS's bundled CodeMirror Vim emulation, **not Neovim**.
 - Default `:w`, `:q[!]`, `:wq`, `:x`, `ZZ`/`ZQ` and all-tab variants.

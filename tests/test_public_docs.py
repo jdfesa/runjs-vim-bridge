@@ -32,15 +32,30 @@ class PublicDocsTests(unittest.TestCase):
             r'/(?:Users|home)/[^\s]+|[A-Za-z]:\\Users\\[^\s]+|'
             r'/(?:Applications|opt)/[^\s\'"`]*RunJS\.app'
         )
-        for folder in ['scripts', 'patches', 'tests', 'docs']:
+        for folder in ['scripts', 'patches', 'tests', 'docs', '.github']:
             for source in (ROOT / folder).rglob('*'):
-                if source.suffix not in {'.py', '.js', '.cjs', '.css', '.md'}:
+                if source.suffix not in {'.py', '.js', '.cjs', '.css', '.md', '.json', '.yml', '.yaml'}:
                     continue
                 with self.subTest(source=str(source.relative_to(ROOT))):
                     self.assertIsNone(local_path.search(source.read_text()))
-        for name in ['README.md', 'AGENTS.md', '.gitignore']:
+        for name in ['README.md', 'AGENTS.md', '.gitignore', 'package.json', 'package-lock.json']:
             with self.subTest(source=name):
                 self.assertIsNone(local_path.search((ROOT / name).read_text()))
+
+    def test_platform_status_separates_native_validation_from_synthetic_ci(self):
+        readme = (ROOT / 'README.md').read_text()
+        self.assertIn('Verified app target: **RunJS 4.1.0 on macOS**', readme)
+        self.assertIn('Linux and Windows has not been tested yet', readme)
+        self.assertNotIn('other versions/platforms are unsupported', readme)
+        development = ' '.join((ROOT / 'docs/development.md').read_text().split())
+        self.assertIn('Synthetic Linux CI does not validate a native Linux installation.', development)
+        self.assertIn('current installer handles macOS app bundles', development)
+
+    def test_development_guide_focuses_on_contribution_and_source_hygiene(self):
+        development = (ROOT / 'docs/development.md').read_text()
+        self.assertIn('## Contribution Workflow', development)
+        self.assertIn('## Source Hygiene', development)
+        self.assertNotIn('## Publication Review', development)
 
 
 if __name__ == '__main__':

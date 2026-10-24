@@ -24,6 +24,8 @@
 - Keep README.md short; put installation, rollback, architecture, and plans in docs/.
 - Explain where patch files go and how users apply and restore them themselves.
 - Clearly separate implemented, verified, and planned behavior.
+- Distinguish verified macOS app integration from untested Linux/Windows native
+  integration. Synthetic cross-platform CI is not native app validation.
 - Update this file as project conventions evolve.
 
 ## Appearance

@@ -2,9 +2,10 @@
 
 ## Requirements
 
-Experimental support: **RunJS 4.1.0 on macOS only**. Review the
-[RunJS EULA](https://runjs.app/eula) and resolve the relevant permissions before
-modifying or distributing anything. No app binaries are supplied here.
+Verified app target: **RunJS 4.1.0 on macOS**. Native integration on Linux and
+Windows has not been tested yet. The current installer expects a macOS app bundle;
+adapting it to other installation layouts remains separate work.
+No RunJS binaries are supplied here.
 
 You need Python 3.10+, your own RunJS installation, write access to that app,
 space for a full backup, and macOS tools `codesign`, `ditto`, `unzip`, and `pgrep`.
