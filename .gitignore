@@ -18,3 +18,7 @@ native-startup.log
 __pycache__/
 *.py[cod]
 .pytest_cache/
+
+# Developer tooling.
+node_modules/
+npm-debug.log*

@@ -7,6 +7,8 @@
   renderer discovery and main-process host actions; see [host commands](host-commands.md).
 - `runjs-relative-lines.js` in that directory: optional per-editor gutter formatter.
 - `scripts/`: thin CLI entry points, plus reproducible private audit preparation.
+- `scripts/check.cjs` and `scripts/checks/`: standard test entry, source discovery
+  and subprocess orchestration shared by local checks and CI.
 - `scripts/runjs_bridge/`: `archive.py` owns parsing/packing/integrity;
   `composition.py` owns assets/HTML/version pins; `build.py` owns orchestration;
   `backup.py`, `install.py` and `restore.py` own their respective lifecycle stages.
@@ -30,16 +32,30 @@ app changes. See [installation](installation.md) for exact destinations.
 
 ## Checks
 
-From the project root, with Python 3.10+ and Node.js 18+:
+From the project root, with Python 3.10+ and Node.js 22+ (including npm):
 
 ```sh
-rtk python3 -m unittest discover -s tests -v
-rtk proxy node --test tests/*.cjs
-rtk proxy node --check patches/runjs-4.1.0/runjs-vim-mode.js
+rtk proxy npm test
 ```
 
-RTK is a contributor workflow, not an end-user dependency. Plain commands appear
-in the README. No dependencies need downloading for these tests.
+`npm test` runs Python tests, Node tests and syntax checks for every owned JavaScript
+source under patches/, scripts/ and tests/. It stops at the first failing check
+and returns its nonzero exit code. The private package has no npm dependencies;
+no install is needed to run the tests. `npm ci --ignore-scripts` can validate the
+lockfile in a fresh checkout. This package does not install or run RunJS.
+
+Use `npm run test:python`, `npm run test:node` or `npm run check:syntax` for one
+layer. `PYTHON` can select another Python executable, for example
+`PYTHON=python3.12 npm test` in a POSIX shell. The runner derives the checkout root,
+passes subprocess arguments without a shell, and uses no machine-specific paths.
+
+RTK is a contributor workflow, not an end-user dependency. Plain `npm test` works
+without RTK. Existing direct Python/Node commands remain available:
+
+```sh
+python3 -m unittest discover -s tests -v
+node --test tests/*.cjs
+```
 
 | Layer | Proves | Does not prove |
 | --- | --- | --- |

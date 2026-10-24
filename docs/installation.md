@@ -8,7 +8,7 @@ modifying or distributing anything. No app binaries are supplied here.
 
 You need Python 3.10+, your own RunJS installation, write access to that app,
 space for a full backup, and macOS tools `codesign`, `ditto`, `unzip`, and `pgrep`.
-Node.js 18+ is needed only for development tests.
+Node.js 22+ (including npm) is needed only for development tests.
 
 Run these commands **from the project root**, wherever you placed it. Enter your
 own paths at the prompts, without surrounding quotes. Arguments are quoted below

@@ -42,16 +42,14 @@ into the app's Resources directory as loose files.
 
 ## Validate
 
-From the project root, with Python 3.10+ and Node.js 18+:
+From the project root, with Python 3.10+ and Node.js 22+ (including npm):
 
 ```sh
-python3 -m unittest discover -s tests -v
-node --test tests/*.cjs
-node --check patches/runjs-4.1.0/runjs-vim-mode.js
+npm test
 ```
 
-Tests use synthetic app files and a simulated editor. They do not modify RunJS
-or establish full native keybinding compatibility.
+No npm dependencies are required. This runs Python tests, Node tests and JavaScript
+syntax checks using synthetic fixtures; it does not modify RunJS or prove native parity.
 
 ## Project Scope
 

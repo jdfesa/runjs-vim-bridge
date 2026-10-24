@@ -1,0 +1,15 @@
+{
+  "name": "runjs-vim-bridge",
+  "version": "1.4.0",
+  "private": true,
+  "description": "Personal educational proof of concept for Vim-style editing experiments in RunJS 4.1.0 on macOS.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node scripts/check.cjs all",
+    "test:python": "node scripts/check.cjs python",
+    "test:node": "node scripts/check.cjs node",
+    "check:syntax": "node scripts/check.cjs syntax"
+  }
+}
