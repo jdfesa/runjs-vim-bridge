@@ -2,22 +2,27 @@
 
 [![CI](https://github.com/jdfesa/runjs-vim-bridge/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/jdfesa/runjs-vim-bridge/actions/workflows/ci.yml)
 
-**An educational proof of concept for personal Neovim practice inside RunJS.**
+**Build Neovim editing habits without leaving RunJS.**
 
 The main goal is to bring **most default Neovim editing shortcuts into RunJS**,
 while keeping its JavaScript/TypeScript execution, preview, and sandbox workflow.
 Practice transferable modal editing without another layer of editor configuration.
-This is not a native Neovim integration or a replacement for RunJS's features.
+
+- **Live mode HUD:** see `NORMAL`, `INSERT` and visual modes as you edit.
+- **Familiar editing:** motions, operators, text objects, counts, repeat and undo
+  through RunJS's bundled CodeMirror Vim engine, not a native Neovim runtime.
+- **Native save/quit adapters:** `:w`, `:q[!]`, `:wq`, `:x`, `ZZ`/`ZQ` and all-tab variants.
+- **Optional visuals:** Mint Dark, dark Web View defaults and relative line numbers.
+
+Try the [demo exercise](examples/readme-demo.js) or follow the
+[screenshot and recording guide](docs/screenshots.md) to show the bridge in action.
 
 ## Status
 
 - Verified app target: **RunJS 4.1.0 on macOS**.
 - Native RunJS integration on Linux and Windows has not been tested yet.
-- Patch 1.4.0 source: native save/quit adapters, English HUD and optional visuals.
-- Editing engine: RunJS's bundled CodeMirror Vim emulation, **not Neovim**.
-- Default `:w`, `:q[!]`, `:wq`, `:x`, `ZZ`/`ZQ` and all-tab variants.
+- Current patch: **1.4.0**; see [keybinding evidence and limits](docs/keybindings.md).
 - Core native save/quit checks passed by user report; extended acceptance remains pending.
-- Experimental learning project, not a supported RunJS extension or full Neovim runtime.
 
 ## Get Started
 

@@ -14,7 +14,7 @@
   location; do not assume an install folder or checkout location.
 - Resolve machine-specific paths only at runtime. Generated build/backup manifests
   may contain resolved local paths and must remain excluded from publication.
-- Do not commit RunJS binaries, extracted bundles, ASAR files, ZIPs, exercises,
+- Do not commit RunJS binaries, extracted bundles, ASAR files, ZIPs, personal exercises,
   preferences, logs, or private backups. Audit files, not just ignore rules.
 
 ## Language and Documentation
@@ -26,6 +26,8 @@
 - Clearly separate implemented, verified, and planned behavior.
 - Distinguish verified macOS app integration from untested Linux/Windows native
   integration. Synthetic cross-platform CI is not native app validation.
+- Use genuine app captures and synthetic demo content for README visuals. Review
+  media for private details; never present mockups or audit harnesses as native UI.
 - Update this file as project conventions evolve.
 
 ## Appearance

@@ -14,6 +14,7 @@
   `backup.py`, `install.py` and `restore.py` own their respective lifecycle stages.
   Backup copies include these modules so restore does not depend on the checkout.
 - `tests/`: synthetic app safety tests and simulated editor/DOM HUD tests.
+- `examples/`: dependency-free showcase exercises with synthetic data, not personal work.
 - `docs/`: installation, compatibility targets, and future work.
 - `AGENTS.md`: project conventions. README.md stays an entry point.
 
@@ -39,7 +40,7 @@ rtk proxy npm test
 ```
 
 `npm test` runs Python tests, Node tests and syntax checks for every owned JavaScript
-source under patches/, scripts/ and tests/. It stops at the first failing check
+source under examples/, patches/, scripts/ and tests/. It stops at the first failing check
 and returns its nonzero exit code. The private package has no npm dependencies;
 no install is needed to run the tests. `npm ci --ignore-scripts` can validate the
 lockfile in a fresh checkout. This package does not install or run RunJS.
@@ -140,3 +141,6 @@ sandbox/preload/navigation controls and exercise-authored preview styles intact.
 Inspect the actual file list before committing or sharing changes. Exclude app
 archives, extracted bundles, backups, generated manifests, preferences, logs and
 personal exercises. Use relative examples and user-supplied app locations.
+README media must be genuine app captures with clean synthetic content; see the
+[screenshot guide](screenshots.md). Review every image for private details before
+adding it. Screenshots illustrate only the states and versions actually shown.

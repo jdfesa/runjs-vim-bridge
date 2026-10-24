@@ -12,9 +12,20 @@ class PublicDocsTests(unittest.TestCase):
     def test_readme_stays_an_entry_point(self):
         text = (ROOT / 'README.md').read_text()
         self.assertLessEqual(len(text.splitlines()), 80)
-        for guide in ['installation', 'keybindings', 'roadmap', 'development']:
+        for guide in ['installation', 'keybindings', 'roadmap', 'development', 'screenshots']:
             self.assertIn(f'docs/{guide}.md', text)
             self.assertTrue((ROOT / 'docs' / f'{guide}.md').is_file())
+
+    def test_readme_showcase_describes_features_and_links_the_runnable_demo(self):
+        readme = (ROOT / 'README.md').read_text()
+        for feature in ['NORMAL', 'INSERT', 'Mint Dark', 'relative line numbers']:
+            self.assertIn(feature, readme)
+        self.assertIn('examples/readme-demo.js', readme)
+        demo = ROOT / 'examples/readme-demo.js'
+        self.assertTrue(demo.is_file())
+        guide = (ROOT / 'docs/screenshots.md').read_text()
+        self.assertIn('../examples/readme-demo.js', guide)
+        self.assertIn('real RunJS window', guide)
 
     def test_relative_documentation_links_resolve(self):
         documents = [ROOT / 'README.md', ROOT / 'AGENTS.md', *sorted((ROOT / 'docs').glob('*.md'))]
@@ -32,7 +43,7 @@ class PublicDocsTests(unittest.TestCase):
             r'/(?:Users|home)/[^\s]+|[A-Za-z]:\\Users\\[^\s]+|'
             r'/(?:Applications|opt)/[^\s\'"`]*RunJS\.app'
         )
-        for folder in ['scripts', 'patches', 'tests', 'docs', '.github']:
+        for folder in ['examples', 'scripts', 'patches', 'tests', 'docs', '.github']:
             for source in (ROOT / folder).rglob('*'):
                 if source.suffix not in {'.py', '.js', '.cjs', '.css', '.md', '.json', '.yml', '.yaml'}:
                     continue

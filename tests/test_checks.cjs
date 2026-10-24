@@ -15,7 +15,7 @@ test('all checks use the same Python, explicit Node tests and complete syntax pl
   assert.deepEqual(plan[1], [process.execPath, ['--test', ...nodeTestFiles(ROOT)]]);
   assert.ok(plan[1][1].includes(path.join('tests', 'test_checks.cjs')));
   assert.deepEqual(plan.slice(2), javascriptFiles(ROOT).map(file => [process.execPath, ['--check', file]]));
-  for (const file of ['scripts/check.cjs', 'scripts/checks/run.cjs', 'tests/host-audit/runner.js',
+  for (const file of ['examples/readme-demo.js', 'scripts/check.cjs', 'scripts/checks/run.cjs', 'tests/host-audit/runner.js',
     'patches/runjs-4.1.0/bridge-host/renderer.cjs']) {
     assert.ok(javascriptFiles(ROOT).includes(file.split('/').join(path.sep)));
   }

@@ -4,7 +4,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function javascriptFiles(root, folders = ['patches', 'scripts', 'tests']) {
+function javascriptFiles(root, folders = ['examples', 'patches', 'scripts', 'tests']) {
   const files = [];
   function visit(relative) {
     for (const entry of fs.readdirSync(path.join(root, relative), { withFileTypes: true })) {
